@@ -11,29 +11,18 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 
 ## 📑 Index
 
-- [Twitter](#1-twitter--nitter)
-- [Medium](#2-medium--scribe)
-- [Reddit](#3-reddit--redlib)
-- [YouTube](#4-youtube--invidious)
+- [Medium](#1-medium--scribe)
+- [Reddit](#2-reddit--redlib)
+- [YouTube](#3-youtube--invidious)
+- [Wikipedia](#4-wikipedia--wikiless)
 - [NYTimes](#5-nytimes--archivetoday)
 - [New Yorker](#6-new-yorker--archivetoday)
-- [Washington Post](#6-washington-post--archivetoday)
+- [Washington Post](#7-washington-post--archivetoday)
+- [Twitter (deprecated)](#8-twitter--nitter-deprecated)
 
 ## 📜 Redirect Rules
 
-### 1. Twitter → Nitter
-
-- **Original domain:** `x.com`
-- **Redirects to:** `nitter.net`
-- **Service:** [Nitter](https://nitter.net) – lightweight, privacy‑focused Twitter frontend
-- **Rule:**
-```text
-^https?://(?:www\.)?x\.com|https://nitter.net
-```
-
----
-
-### 2. Medium → Scribe
+### 1. Medium → Scribe
 
 - **Original domain:** `medium.com`
 - **Redirects to:** `scribe.rawbit.ninja`
@@ -45,7 +34,7 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 
 ---
 
-### 3. Reddit → Redlib
+### 2. Reddit → Redlib
 
 - **Original domain:** `reddit.com`
 - **Redirects to:** `redlib.catsarch.com`
@@ -57,7 +46,7 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 
 ---
 
-### 4. YouTube → Invidious
+### 3. YouTube → Invidious
 
 - **Original domain:** `youtube.com` (any path, e.g. `/watch?v=...`)
 - **Redirects to:** `invidious.nerdvpn.de` (same path)
@@ -65,6 +54,18 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 - **Rule:**
 ```text
 ^https?://(?:www\.)?youtube\.com|https://invidious.nerdvpn.de
+```
+
+---
+
+### 4. Wikipedia → Wikiless
+
+- **Original domain:** `wikipedia.org` (any language subdomain)
+- **Redirects to:** `wikiless.tiekoetter.com`
+- **Service:** [Wikiless](https://wikiless.tiekoetter.com) – privacy‑focused Wikipedia frontend
+- **Rule:**
+```text
+^https?://(?:[\w-]+\.)*wikipedia\.org|wikiless.tiekoetter.com
 ```
 
 ---
@@ -93,7 +94,7 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 
 ---
 
-### 6. Washington Post → Archive.today
+### 7. Washington Post → Archive.today
 
 - **Original domain:** `washingtonpost.com`
 - **Redirects to:** `archive.ph` snapshot of the same article
@@ -101,4 +102,18 @@ These rules only affect **search result clicks** inside Kagi, not manually typed
 - **Rule:**
 ```text
 ^https?://(?:www\.)?washingtonpost\.com/(.*)$|https://archive.ph/https://www.washingtonpost.com/$1
+```
+
+---
+
+### 8. Twitter → Nitter (deprecated)
+
+> **Deprecated:** Nitter instances are largely unreliable or offline. Kept for reference only.
+
+- **Original domain:** `x.com`
+- **Redirects to:** `nitter.net`
+- **Service:** [Nitter](https://nitter.net) – lightweight, privacy‑focused Twitter frontend
+- **Rule:**
+```text
+^https?://(?:www\.)?x\.com|https://nitter.net
 ```
